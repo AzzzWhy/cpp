@@ -28,7 +28,7 @@ void judg(double a,double b,double c)
     }
 
 }
-//输出函数
+//输出函数。。
 void input(int i)
 {
     cout<<"第"<<i<<"只"<<endl;
