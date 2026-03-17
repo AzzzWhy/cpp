@@ -11,24 +11,49 @@ void judg(double a,double b,double c)
     if (a>=b&&a>=c)
     {
         cout<<"第一只小猪最重，为"<<a<<"kg"<<endl;
-    }
-    else 
-    {
-       if (b>=c)
-       {
-        cout<<"第二只小猪最重，为"<<b<<"kg"<<endl;  
+        if(b>c)
+        {
+            cout<<"第三只小猪最轻,为"<<c<<"kg"<<endl;
+            cout<<"第二只小猪体重为"<<b<<"kg"<<endl;
+        }
+        else
+        {
+            cout<<"第二只小猪最轻,为"<<b<<"kg"<<endl;
+            cout<<"第三只小猪体重为"<<c<<"kg"<<endl;
 
-       }
-       else
-       {
-        cout<<"第三只小猪最重，为"<<c<<"kg"<<endl;
-        cout<<"第一只小猪体重为"<<a<<"kg"<<endl;
-       }
+        }
     }
-    if(b>c)
+    else if  (b>=a&&b>=c)
     {
-        cout<<"第三只小猪最轻，为"<<c<<"kg"<<endl;
-        cout<<"第二只小猪体重为"<<b<<"kg"<<endl;
+        cout<<"第二只小猪最重，为"<<b<<"kg"<<endl; 
+        if(a>c)
+        {
+            cout<<"第一只小猪最轻,为"<<a<<"kg"<<endl;
+            cout<<"第三只小猪体重为"<<c<<"kg"<<endl;
+        }
+        else
+        {
+            cout<<"第三只小猪最轻,为"<<c<<"kg"<<endl;
+            cout<<"第一只小猪体重为"<<a<<"kg"<<endl;
+
+        }
+
+    }
+    else if  (c>=a&&c>=b)
+    {
+        cout<<"第三只小猪最重，为"<<c<<"kg"<<endl; 
+        if(b>a)
+        {
+            cout<<"第一只小猪最轻,为"<<a<<"kg"<<endl;
+            cout<<"第二只小猪体重为"<<b<<"kg"<<endl;
+        }
+        else
+        {
+            cout<<"第二只小猪最轻,为"<<b<<"kg"<<endl;
+            cout<<"第一只小猪体重为"<<a<<"kg"<<endl;
+
+        }
+        
     }
 
 }
