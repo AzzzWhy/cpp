@@ -1,83 +1,50 @@
 #include <iostream>
 using namespace std;
-//暂时没有用的全局变量
-double num1;
-double num2;
-double num3;
-//体重函数
-void judg(double a,double b,double c)
-//可优化，使用&&，或者考虑数组？
+
+// 找最大
+int findMax(double a,double b,double c)
 {
-    if (a>=b&&a>=c)
-    {
-        cout<<"第一只小猪最重，为"<<a<<"kg"<<endl;
-        if(b>c)
-        {
-            cout<<"第三只小猪最轻,为"<<c<<"kg"<<endl;
-            cout<<"第二只小猪体重为"<<b<<"kg"<<endl;
-        }
-        else
-        {
-            cout<<"第二只小猪最轻,为"<<b<<"kg"<<endl;
-            cout<<"第三只小猪体重为"<<c<<"kg"<<endl;
-
-        }
-    }
-    else if  (b>=a&&b>=c)
-    {
-        cout<<"第二只小猪最重，为"<<b<<"kg"<<endl; 
-        if(a>c)
-        {
-            cout<<"第一只小猪最轻,为"<<a<<"kg"<<endl;
-            cout<<"第三只小猪体重为"<<c<<"kg"<<endl;
-        }
-        else
-        {
-            cout<<"第三只小猪最轻,为"<<c<<"kg"<<endl;
-            cout<<"第一只小猪体重为"<<a<<"kg"<<endl;
-
-        }
-
-    }
-    else if  (c>=a&&c>=b)
-    {
-        cout<<"第三只小猪最重，为"<<c<<"kg"<<endl; 
-        if(b>a)
-        {
-            cout<<"第一只小猪最轻,为"<<a<<"kg"<<endl;
-            cout<<"第二只小猪体重为"<<b<<"kg"<<endl;
-        }
-        else
-        {
-            cout<<"第二只小猪最轻,为"<<b<<"kg"<<endl;
-            cout<<"第一只小猪体重为"<<a<<"kg"<<endl;
-
-        }
-        
-    }
-
+    if(a >= b && a >= c) return 1;
+    if(b >= a && b >= c) return 2;
+    return 3;
 }
-//输出函数。。
+
+// 找最小
+int findMin(double a,double b,double c)
+{
+    if(a <= b && a <= c) return 1;
+    if(b <= a && b <= c) return 2;
+    return 3;
+}
+
+// 输出结果
+void printResult(double a,double b,double c)
+{
+    int max_id = findMax(a,b,c);  // 函数套函数
+    int min_id = findMin(a,b,c);
+
+    double arr[3] = {a,b,c};
+
+    cout << "第" << max_id << "只小猪最重，为" << arr[max_id-1] << "kg" << endl;
+    cout << "第" << min_id << "只小猪最轻，为" << arr[min_id-1] << "kg" << endl;
+}
+
 void input(int i)
 {
     cout<<"第"<<i<<"只"<<endl;
 }
-//主函数
+
 int main()
 {
-    cout<<"请依次输入小猪的质量"<<endl;
-    input(1);
-    double num_1;
-    cin>>num_1;
-    input(2);
-    double num_2;
-    cin>>num_2;
-    input(3);
-    double num_3;
-    cin>>num_3;
+    double a,b,c;
 
-    judg(num_1,num_2,num_3);
+    cout<<"请依次输入小猪的质量"<<endl;
+
+    input(1); cin>>a;
+    input(2); cin>>b;
+    input(3); cin>>c;
+
+    printResult(a,b,c);
 
     return 0;
 }
-
