@@ -8,18 +8,22 @@ double num3;
 void judg(double a,double b,double c)
 //可优化，使用&&，或者考虑数组？
 {
-    if (a>=b)
+    if (a>=b&&a>=c)
     {
         cout<<"第一只小猪最重，为"<<a<<"kg"<<endl;
     }
-    else
+    else 
     {
-        cout<<"第二只小猪最重，为"<<b<<"kg"<<endl;
-        if(a>c)
-        {
-            cout<<"第三只小猪最轻，为"<<c<<"kg"<<endl;
-            cout<<"第一只小猪体重为"<<a<<"kg"<<endl;
-        }
+       if (b>=c)
+       {
+        cout<<"第二只小猪最重，为"<<b<<"kg"<<endl;  
+
+       }
+       else
+       {
+        cout<<"第三只小猪最重，为"<<c<<"kg"<<endl;
+        cout<<"第一只小猪体重为"<<a<<"kg"<<endl;
+       }
     }
     if(b>c)
     {
