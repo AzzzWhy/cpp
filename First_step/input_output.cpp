@@ -25,7 +25,7 @@ int main()
     bool flag=false;
     cout<<flag<<endl;
     cin>>flag;
-    cout<<"bool"<<flag<<endl;
+    cout<<"bool"<<flag<< endl;
 
 
 
