@@ -84,5 +84,33 @@ int main()
         }
     }
     cout << "the max is " << max << endl;
-    return 0;*/
+    return 0;
+    int start = 0;
+    int arr[5] = {1, 3, 2, 5, 4};
+    cout << "逆秩前效果" << endl;
+    for (int i = 0; i < 5; i++)
+    {
+        cout << arr[i] << endl;
+    }
+    int end = sizeof(arr) / sizeof(arr[0]) - 1;
+
+    while (start < end)
+    {
+
+        int temp = arr[start];
+        arr[start] = arr[end];
+        arr[end] = temp;
+        start++;
+        end--;
+    }
+    cout << "逆秩后效果" << endl;
+    for (int i = 0; i < 5; i++)
+    {
+        cout << arr[i] << endl;
+    }
+    return 0;
+    //起始元素下标
+    //末尾元素下标
+    int temp;//临时变量
+    */
 }
