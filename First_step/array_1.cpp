@@ -113,4 +113,35 @@ int main()
     //末尾元素下标
     int temp;//临时变量
     */
+    int temp; // 临时变量
+    int arr[9] = {4, 2, 8, 0, 5, 7, 1, 3, 9};
+    cout << "Before the sort" << endl;
+    for (int i = 0; i < 9; i++)
+    {
+        cout << arr[i] << "";
+        cout << endl;
+    }
+    // 开始冒泡
+    // 排序的总个数=元素的个数-1
+    // 每轮对比的次数=元素的个数-排序轮数-1
+    for (int i = 0; i < 9 - 1; i++)
+    {
+        // 内层的循环对比
+        for (int j = 0; j < 9 - i - 1; j++)
+        {
+            if (arr[j] > arr[j + 1])
+            {
+                temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+    cout << "After the sort" << endl;
+    for (int i = 0; i < 9; i++)
+    {
+        cout << arr[i] << "";
+        cout << endl;
+    }
+    return 0;
 }
