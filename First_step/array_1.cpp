@@ -112,7 +112,7 @@ int main()
     //起始元素下标
     //末尾元素下标
     int temp;//临时变量
-    */
+
     int temp; // 临时变量
     int arr[9] = {4, 2, 8, 0, 5, 7, 1, 3, 9};
     cout << "Before the sort" << endl;
@@ -144,4 +144,5 @@ int main()
         cout << endl;
     }
     return 0;
+    */
 }
